@@ -1,9 +1,11 @@
-from fighter import Fighter
 from abc import ABCMeta
 from abc import abstractmethod
 
 
 class Fighter(metaclass=ABCMeta):
+    @property
+    def __str__(self):
+        raise NotImplementedError
 
     @abstractmethod
     def obtener_hp(self):
@@ -26,5 +28,5 @@ class Fighter(metaclass=ABCMeta):
         raise NotImplementedError
 
     @abstractmethod
-    def compute_damage(self, enemy: Fighter):
+    def compute_damage(self, enemy):
         raise NotImplementedError

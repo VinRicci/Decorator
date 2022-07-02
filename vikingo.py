@@ -10,6 +10,10 @@ class Vikingo(Fighter):
         self.__defensa: float = 6
         self.__velocidad: float = 10
 
+    def __str__(self):
+        return print(f"Vikingo - HP {self.__hp} - Ataq {self.__ataque} -"
+                     f" Def {self.__defensa} - Vel {self.__velocidad}")
+
     def obtener_hp(self):
         return self.__hp
 

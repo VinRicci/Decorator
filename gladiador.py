@@ -9,6 +9,10 @@ class Gladiador(Fighter):
         self.__defensa: float = 15
         self.__velocidad: float = 9
 
+    def __str__(self):
+        return print(f"Gladiador - HP {self.__hp} - Ataq {self.__ataque} -"
+                     f" Def {self.__defensa} - Vel {self.__velocidad}")
+
     def obtener_hp(self):
         return self.__hp
 

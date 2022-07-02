@@ -4,10 +4,16 @@ from fighter import Fighter
 
 class Espartano(Fighter):
     def __init__(self):
-        self.__hp: float = 100
-        self.__ataque: float = 13
-        self.__defensa: float = 8
-        self.__velocidad: float = 10
+        self.hp: float = 100
+        self.ataque: float = 13
+        self.defensa: float = 8
+        self.velocidad: float = 10
+
+    def __str__(self):
+        print(f"Espartano - HP 100 ")
+        print(f"- Ataq 13")
+        print(f" - Def 8")
+        print(f" - Vel 10")
 
     def obtener_hp(self):
         return self.__hp

@@ -1,26 +1,18 @@
 from fighterdecorator import FighterDecorator
-from fighter import Fighter
 
 
 class Casco(FighterDecorator):
-    def __init__(self):
-        self.__defensa: float = 6.0
-        self.__velocidad: float = -1.0
+    def __init__(self, fighterdecorator: FighterDecorator):
+        super().__init__(fighterdecorator)
+        self.__defensa: float = 10.0
+        self.__velocidad: float = -2.0
 
-    def obtener_hp(self):
-        pass
-
-    def obtener_ataque(self):
-        pass
+    @property
+    def __str__(self):
+        return print(f"Casco - Def {self.__defensa} - Vel {self.__velocidad}")
 
     def obtener_defensa(self):
-        return self.__defensa
+        return super().obtener_defensa()+self.__defensa
 
     def obtener_velocidad(self):
-        return self.__velocidad
-
-    def reduce_hp(self, damage: float):
-        pass
-
-    def compute_damage(self, enemy: Fighter):
-        pass
+        return super().obtener_velocidad()+self.__velocidad
