@@ -7,9 +7,8 @@ class Botas(FighterDecorator):
         self.__ataque: float = -6.0
         self.__velocidad: float = 10.0
 
-    @property
     def __str__(self):
-        return print(f"Botas - Ataq {self.__ataque} - Vel {self.__velocidad}")
+        return f"Botas - Ataq {self.__ataque} - Vel {self.__velocidad}"
 
     def obtener_ataque(self):
         return super().obtener_ataque()+self.__ataque

@@ -7,9 +7,8 @@ class Hongo(FighterDecorator):
         self.__defensa: float = -6.0
         self.__hp: float = 12.0
 
-    @property
     def __str__(self):
-        return print(f"Hongos - Def {self.__defensa} - HP {self.__hp}")
+        return f"Hongos - Def {self.__defensa} - HP {self.__hp}"
 
     def obtener_hp(self):
         return super().obtener_hp()+self.__hp

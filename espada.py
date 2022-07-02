@@ -7,12 +7,11 @@ class Espada(FighterDecorator):
         self.__ataque: float = 8.0
         self.__hp: float = -2.0
 
-    @property
     def __str__(self):
-        return print(f"Espada - Ataq {self.__ataque} - HP {self.__hp}")
+        return f"Espada - Ataq {self.__ataque} - HP {self.__hp}"
 
     def obtener_hp(self):
-        return super().obtener_hp()+self.__hp
+        return float(super().obtener_hp()+self.__hp)
 
     def obtener_ataque(self):
-        return super().obtener_ataque()+self.__ataque
+        return float(super().obtener_ataque()+self.__ataque)

@@ -10,8 +10,11 @@ class Samurai(Fighter):
         self.__velocidad: float = 15
 
     def __str__(self):
-        return print(f"Samurai - HP {self.__hp} - Ataq {self.__ataque} -"
-                     f" Def {self.__defensa} - Vel {self.__velocidad}")
+        return f"Samurai - HP {self.__hp} - Ataq {self.__ataque} - Def {self.__defensa} - Vel {self.__velocidad}\n"
+
+    def set_vida(self, vida: float):
+        self.__hp = vida
+        return ""
 
     def obtener_hp(self):
         return self.__hp
@@ -26,11 +29,12 @@ class Samurai(Fighter):
         return self.__velocidad
 
     def reduce_hp(self, damage: float):
-        self.__hp -= damage
-        return self.__hp
+        vida = self.__decorated_fighter.obtener_hp() + damage
+        self.__decorated_fighter.set_vida(vida)
+        return vida
 
     def compute_damage(self, enemy: Fighter):
         soporta: float = random.uniform(0, self.__defensa)
-        soporta -= Fighter.obtener_ataque
+        soporta -= enemy.obtener_ataque
         self.reduce_hp(soporta)
-        return print(f"El danio de ataque es: {soporta}")
+        return print(f"{soporta} de danio")

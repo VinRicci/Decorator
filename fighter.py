@@ -30,3 +30,6 @@ class Fighter(metaclass=ABCMeta):
     @abstractmethod
     def compute_damage(self, enemy):
         raise NotImplementedError
+
+    def set_vida(self, vida: float):
+        raise NotImplementedError

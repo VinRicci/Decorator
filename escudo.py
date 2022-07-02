@@ -7,9 +7,8 @@ class Escudo(FighterDecorator):
         self.__defensa: float = 10.0
         self.__velocidad: float = -2.0
 
-    @property
     def __str__(self):
-        return print(f"Escudo - Def {self.__defensa} - Vel {self.__velocidad}")
+        return f"Escudo - Def {self.__defensa} - Vel {self.__velocidad}"
 
     def obtener_defensa(self):
         return super().obtener_defensa()+self.__defensa
